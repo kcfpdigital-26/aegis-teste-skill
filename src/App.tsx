@@ -47,6 +47,14 @@ const LayerCard = ({ title, desc, icon }: { title: string, desc: string, icon: s
   </div>
 );
 
+const ModuleCard = ({ number, title, desc }: { number: string, title: string, desc: string }) => (
+  <div className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-all">
+    <div className="text-sm font-bold text-[#22D3EE] mb-2">MÓDULO {number}</div>
+    <h4 className="text-xl font-bold mb-3 font-space">{title}</h4>
+    <p className="text-[#94A3B8] text-sm leading-relaxed">{desc}</p>
+  </div>
+);
+
 const App = () => (
   <main className="bg-[#0F172A] min-h-screen text-white">
     <Navbar />
@@ -76,6 +84,59 @@ const App = () => (
       </div>
     </section>
 
+    <section id="modules" className="py-24 px-6 bg-black/20">
+      <div className="max-w-7xl mx-auto">
+        <div className="mb-16">
+          <h2 className="text-4xl font-bold mb-4 font-space text-center">Os 7 Pilares da Entrega</h2>
+          <p className="text-[#94A3B8] text-center max-w-3xl mx-auto">Uma jornada completa desde o entendimento do problema até a evolução contínua da plataforma.</p>
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <ModuleCard 
+            number="M1"
+            title="Discovery & Strategy"
+            desc="Imersão técnica para alinhar objetivos de negócio com a viabilidade da IA."
+          />
+          <ModuleCard 
+            number="M2"
+            title="Audit & Recovery"
+            desc="Saneamento de débitos técnicos e recuperação de projetos em risco."
+          />
+          <ModuleCard 
+            number="M3"
+            title="Architecture & Tech Stack"
+            desc="Definição de bases sólidas e seguras para orquestração de agentes."
+          />
+          <ModuleCard 
+            number="M4"
+            title="Delivery & Governance"
+            desc="Fluxos de CI/CD inteligentes e rituais de governança automatizados."
+          />
+          <ModuleCard 
+            number="M5"
+            title="QA & Resilience"
+            desc="Testes contínuos e monitoramento preventivo para zero falhas."
+          />
+          <ModuleCard 
+            number="M6"
+            title="Analytics & Insights"
+            desc="Métricas de performance de entrega e saúde do ecossistema de agentes."
+          />
+        </div>
+        <div className="mt-8 lg:col-span-3">
+           <div className="bg-gradient-to-r from-[#22D3EE]/20 to-[#818CF8]/20 border border-white/10 p-8 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-8">
+              <div className="flex-1">
+                <div className="text-sm font-bold text-[#818CF8] mb-2">MÓDULO M7</div>
+                <h4 className="text-3xl font-bold mb-2 font-space">Scale & Evolution</h4>
+                <p className="text-[#94A3B8]">Expansão horizontal do framework para múltiplos squads e produtos.</p>
+              </div>
+              <button className="whitespace-nowrap bg-white/10 hover:bg-white/20 border border-white/10 px-8 py-4 rounded-xl font-bold transition-all">
+                Explorar Evolução
+              </button>
+           </div>
+        </div>
+      </div>
+    </section>
+
     <section id="audit" className="py-24 bg-[#22D3EE]/5 border-y border-[#22D3EE]/10">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
         <div className="flex-1">
@@ -93,7 +154,8 @@ const App = () => (
               <p className="mb-2">// Aegis OS Diagnostic Scan...</p>
               <p className="mb-2 text-white">Status: <span className="text-red-400">Critical Debt Detected</span></p>
               <p className="mb-2 text-white">Security Score: 42%</p>
-              <p className="border-t border-white/10 pt-4 mt-4 text-[#818CF8]">Recomendação: Iniciar Recuperação M2</p>
+              <p className="mb-2 text-white">Logic Consistency: Low</p>
+              <p className="border-t border-white/10 pt-4 mt-4 text-[#818CF8]">Recomendação: Iniciar Ciclo de Recuperação M2</p>
            </div>
         </div>
       </div>
